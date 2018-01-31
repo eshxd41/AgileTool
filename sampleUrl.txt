@@ -1,0 +1,53 @@
+/project-{project_id}-in-{project_member}
+GET
+ 200
+ 400
+	Project_IdNotPositiveInteger
+	Member_idNotPositiveInteger
+	404
+	
+/members - in - {project_id}
+POST with Project_id
+201 with location
+400
+	Project_IdNotPositiveInteger
+401 only assigned employee can be seen
+409
+	projectIdFound
+	
+	
+	
+
+	
+	
+	
+	
+	
+***************
+/features
+POST with Project_id, description, title, members
+201 with location: /project- {project_id}
+400
+	titleOfProjectMissing
+	DescriptionOfProject
+	MemberOfProjectMissing
+	
+/feature- {id}: project is already assigned
+GET
+	200
+	400 Project_idNotFound
+	404
+POST with Project_id, members of project
+400
+	projectMemberMisssing
+	
+/members- of- {project}- on - {feature}
+PUT with Project_id
+204
+400
+	project_idNotmatching
+	Project_idNotBoolean
+404
+
+
+***************
